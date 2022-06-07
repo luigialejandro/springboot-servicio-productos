@@ -22,7 +22,7 @@ public class ProductoServiceImpl implements IProductoService {
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public Producto findById(Long id) {
 		return productoDao.findById(id).orElse(null);
 	}
